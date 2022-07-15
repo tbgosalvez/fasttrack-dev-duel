@@ -1,0 +1,21 @@
+.default {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 3rem;
+	width: 50%;
+	/* width: 100vw; */
+	overflow: hidden;
+}
+
+.default img {
+	max-width: 50%;
+	/* max-height: 240px;  */
+	border-radius: 12px;
+	/* object-fit: none; */
+	/* object-position: 50% 50%; */
+}
+
+.default li {
+	list-style: none;
+}

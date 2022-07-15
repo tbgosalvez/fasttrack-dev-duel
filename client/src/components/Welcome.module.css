@@ -1,0 +1,9 @@
+/* @import url('http://fonts.cdnfonts.com/css/pastor-of-muppets'); */
+
+.default {
+	font-family: 'Pastor of Muppets', sans-serif;
+	font-size: 10rem;
+	text-align: center;
+	width: 100%;
+	margin: 0 auto;
+}
