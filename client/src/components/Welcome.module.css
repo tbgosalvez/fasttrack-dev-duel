@@ -4,6 +4,8 @@
 	font-family: 'Pastor of Muppets', sans-serif;
 	font-size: 10rem;
 	text-align: center;
-	width: 100%;
+	border-top: 4px solid #a00;
+	border-bottom: 4px solid #a00;
+	width: 70%;
 	margin: 0 auto;
 }

@@ -27,8 +27,7 @@ export const MenuLink = styled(NavLink)`
   text-decoration: none;
   font-weight: bold;
   font-size: 2rem;
-  color: 
-  31F3C49;
+  color: #00f;
   display: flex;
   justify-content: space-between;
   align-items: center;

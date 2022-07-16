@@ -3,8 +3,7 @@
 	align-items: center;
 	justify-content: space-between;
 	gap: 3rem;
-	width: 50%;
-	/* width: 100vw; */
+	/* flex: 3 3 auto; */
 	overflow: hidden;
 }
 

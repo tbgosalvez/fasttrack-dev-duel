@@ -1,3 +1,4 @@
+import Button from "../UI/Button";
 import {
   Nav,
   NavbarContainer,
@@ -6,6 +7,17 @@ import {
   MenuLink,
 } from "./Navbar.styles";
 const Navbar = () => {
+
+	const prefersDarkScheme = window.matchMedia("(prefers-color-scheme: dark)");
+
+	const toggleThemeHandler = () => {
+		if (prefersDarkScheme.matches) {
+			document.body.classList.toggle("light-theme");
+		} else {
+			document.body.classList.toggle("dark-theme");
+		}
+	};
+
   return (
     <Nav>
       <NavbarContainer>
@@ -48,6 +60,13 @@ const Navbar = () => {
             >
               Duel
             </MenuLink>
+          </MenuItem>
+              <Button 
+                onClick={toggleThemeHandler}
+                style={{height: "fit-content", alignSelf: "center"}}>
+                flip the lights
+              </Button>
+          <MenuItem>
           </MenuItem>
         </Menu>
       </NavbarContainer>

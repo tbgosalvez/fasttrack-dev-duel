@@ -3,7 +3,6 @@ import { useEffect, useState } from "react";
 import { inspectUser, duelUsers } from "./services/userService";
 
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import GlobalStyles from "./GlobalStyles";
 import { Navbar } from "./components";
 import Inspect from "./components/Inspect";
 
@@ -20,17 +19,12 @@ function App() {
 	//   inspectUser()
 	// }, [])
 
-	const getProfileHandler = async username => {
-		setUserProfile(await inspectUser(username));
-	}
+	const getProfileHandler = async username => setUserProfile(await inspectUser(username));
 
-	const getVersusHandler = async usernamesArray => {
-		setDuelProfiles(await duelUsers(...usernamesArray));
-	}
+	const getVersusHandler = async usernamesArray => setDuelProfiles(await duelUsers(...usernamesArray));
 
 	return (
 		<Router>
-			<GlobalStyles />
 			<Navbar />
 			<div className={styles.container}>
 				<Switch>

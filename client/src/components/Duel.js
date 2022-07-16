@@ -13,8 +13,7 @@ const Duel = props => {
 	const usernames = [];
 	let profileAttributes = [];
 
-	for (let pp of props.profiles) 
-		profileAttributes.push(Object.entries(pp));
+	for (let pp of props.profiles) profileAttributes.push(Object.entries(pp));
 
 	const onClickHandler = async () => {
 		setIsLoading(true);
@@ -44,8 +43,15 @@ const Duel = props => {
 		content = (
 			<>
 				<div className={styles.versus}>
-					<Profile attributes={profileAttributes[0]} />
-					<Profile attributes={profileAttributes[1]} />
+					<div className={styles.card_vs}>
+						<Profile attributes={profileAttributes[0]} />
+					</div>
+					<div className={styles.img_vs}>
+						<img src="..//street-fighter-vs.png" />
+					</div>
+					<div className={styles.card_vs}>
+						<Profile attributes={profileAttributes[1]} />
+					</div>
 				</div>
 				<Button className={styles.btn_duel} onClick={resetPage}>
 					Reset

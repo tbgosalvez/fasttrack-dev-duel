@@ -2,7 +2,7 @@
 import styles from "./Loading.module.css";
 
 const Loading = props => {
-	return <div className={styles.default}><em>---Loading---</em></div>;
+	return <div className={styles.loader}></div>;
 }
 
 export default Loading;

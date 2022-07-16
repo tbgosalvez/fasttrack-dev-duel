@@ -3,18 +3,37 @@
 	flex-direction: column;
 	align-items: center;
 	gap: 1rem;
-	width: 100%;
+	padding: 1rem;
+	width: 90%;
 }
 
 .versus {
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
+	flex-wrap: wrap;
 	gap: 5rem;
+	width: 100%;
+}
+
+.card_vs {
+	flex: clamp(40%, (1200px - 100vw)*1000, 100%);
+}
+
+.img_vs {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex: clamp(0%, (1200px - 100vw)*1000, 100%);
+
+}
+
+.img_vs img {
+	width: 120px;
 }
 
 .btn_duel {
 	font-family: fantasy;
 	font-size: xx-large;
-	width: 10%;
+	width: 200px;
 }
