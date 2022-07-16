@@ -1,5 +1,14 @@
 .default {
 	display: flex;
-	gap: 0.5rem;
+	justify-content: space-between;
+	/* gap: 0.5rem; */
 	margin-right: 5rem;
+}
+
+.attr {
+
+}
+
+.value {
+
 }

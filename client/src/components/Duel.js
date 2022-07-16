@@ -4,6 +4,7 @@ import InputUsername from "./InputUsername";
 import Loading from "./Loading";
 import Profile from "./Profile";
 import Button from "./UI/Button";
+import Winner from "./Winner";
 
 const Duel = props => {
 	const [isLoading, setIsLoading] = useState(false);
@@ -42,15 +43,20 @@ const Duel = props => {
 	} else {
 		content = (
 			<>
+				{props.victor == "draw" && "¡draw!"}
 				<div className={styles.versus}>
 					<div className={styles.card_vs}>
-						<Profile attributes={profileAttributes[0]} />
+						<Profile 
+							attributes={profileAttributes[0]} 
+							winner={profileAttributes[0][0][1] == props.victor} />
 					</div>
 					<div className={styles.img_vs}>
-						<img src="..//street-fighter-vs.png" />
+						<img src="/street-fighter-vs.png" />
 					</div>
 					<div className={styles.card_vs}>
-						<Profile attributes={profileAttributes[1]} />
+						<Profile 
+							attributes={profileAttributes[1]} 
+							winner={profileAttributes[1][0][1] == props.victor} />
 					</div>
 				</div>
 				<Button className={styles.btn_duel} onClick={resetPage}>

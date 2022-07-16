@@ -1,6 +1,7 @@
 import Card from "./UI/Card";
 import ProfileAttribute from "./ProfileAttribute";
 import styles from "./Profile.module.css";
+import Winner from "./Winner";
 
 const Profile = props => {
 	console.log(props.attributes);
@@ -10,6 +11,7 @@ const Profile = props => {
 
 	return (
 		<Card className={styles.default}>
+			{props.winner && <Winner />}
 			<img src={avatar_url[1]} alt="[a pretty good photo]" />
 			<ul>
 				{attributes.map(a => {
