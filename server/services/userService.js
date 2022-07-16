@@ -88,14 +88,14 @@ const getUserTitles = (userObject, repoObject) => {
   //n00B
   const now = (new Date()).toJSON().split("-");
   const created_at = userObject.created_at.split("-");
-  +created_at[0] == +now[0] ? titles.push("n00B\n") : "";
+  +created_at[0] == +now[0] ? titles.push("n00B") : "";
 
   // veteran
-  +created_at[0] <= (+now[0] - 5) ? titles.push("veteran\n") : "";
+  +created_at[0] <= (+now[0] - 5) ? titles.push("veteran") : "";
 
   // cAfFeiNaTeD
   const updated_at = userObject.updated_at.split("-");
-  +updated_at[1] == +now[1] ? titles.push("cAfFeiNaTeD\n") : "";
+  +updated_at[1] == +now[1] ? titles.push("cAfFeiNaTeD") : "";
 
   console.log(now,created_at,updated_at);
 

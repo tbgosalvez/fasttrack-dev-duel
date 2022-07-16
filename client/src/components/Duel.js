@@ -1,4 +1,5 @@
 import { useState } from "react";
+import Draw from "./Draw";
 import styles from "./Duel.module.css";
 import InputUsername from "./InputUsername";
 import Loading from "./Loading";
@@ -43,7 +44,7 @@ const Duel = props => {
 	} else {
 		content = (
 			<>
-				{props.victor == "draw" && "¡draw!"}
+				{props.victor == "draw" && <Draw />}
 				<div className={styles.versus}>
 					<div className={styles.card_vs}>
 						<Profile 
@@ -55,6 +56,7 @@ const Duel = props => {
 					</div>
 					<div className={styles.card_vs}>
 						<Profile 
+							flipped
 							attributes={profileAttributes[1]} 
 							winner={profileAttributes[1][0][1] == props.victor} />
 					</div>

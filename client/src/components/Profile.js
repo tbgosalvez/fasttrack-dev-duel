@@ -6,13 +6,15 @@ import Winner from "./Winner";
 const Profile = props => {
 	console.log(props.attributes);
 
+	let imagePos = props.flipped ? 1 : 0;
+
 	const avatar_url = props.attributes.filter(e => e[0].includes("avatar-url")).flat();
 	const attributes = props.attributes.filter(e => !e[0].includes("avatar-url"));
 
 	return (
 		<Card className={styles.default}>
 			{props.winner && <Winner />}
-			<img src={avatar_url[1]} alt="[a pretty good photo]" />
+			<img src={avatar_url[1]} alt="[a pretty good photo]" style={{order: imagePos}} />
 			<ul>
 				{attributes.map(a => {
 					return (

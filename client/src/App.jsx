@@ -20,12 +20,22 @@ function App() {
 	//   inspectUser()
 	// }, [])
 
-	const getProfileHandler = async username => setUserProfile(await inspectUser(username));
+	const joinTitles = profile => {
+		profile.titles = profile.titles.join(", ");
+	};
+
+	const getProfileHandler = async username => {
+		let p = await inspectUser(username);
+		joinTitles(p);
+		console.log(p);
+		setUserProfile(p);
+
+	};
 
 	const getVersusHandler = async usernamesArray => {
 		const p = await duelUsers(...usernamesArray);
 		setDuelProfiles(p);
-		
+
 		// do this instead of reading duelProfiles
 		// because it won't change until after re-render
 		determineWinner(p);
@@ -39,22 +49,22 @@ function App() {
 			"highest-starred": 5,
 			"public-repos": 7,
 			"perfect-repos": 9,
-			"total-stars": 2
-		}
+			"total-stars": 2,
+		};
 		let score = 0;
 
-		for(let key in weights) {
+		for (let key in weights) {
 			score += user0[key] * weights[key];
 			score -= user1[key] * weights[key];
 		}
 
 		// stuff with titles
 
-		let w = (score > 0) ? user0.username : user1.username;
-		if(score === 0) w = "draw";
+		let w = score > 0 ? user0.username : user1.username;
+		if (score === 0) w = "draw";
 
 		setWinner(w);
-	}
+	};
 
 	return (
 		<Router>
