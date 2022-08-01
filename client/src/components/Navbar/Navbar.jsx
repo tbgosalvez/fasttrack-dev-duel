@@ -38,7 +38,7 @@ const Navbar = () => {
           <MenuItem>
             <MenuLink
               exact
-              to="/"
+              to="/dev-duel"
               activeStyle={{
                 transform: "traslateY(3rem)",
                 color: "#E38B06",

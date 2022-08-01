@@ -16,9 +16,9 @@ const Profile = props => {
 			{props.winner && <Winner />}
 			<img src={avatar_url[1]} alt="[a pretty good photo]" style={{order: imagePos}} />
 			<ul>
-				{attributes.map(a => {
+				{attributes.map((a,i) => {
 					return (
-						<li key={Math.random()}>
+						<li key={i}>
 							<ProfileAttribute attr={a[0]} value={a[1]} />
 						</li>
 					)

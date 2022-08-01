@@ -1,14 +1,14 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
-import { inspectUser, duelUsers } from "./services/userService";
+import { duelUsers, inspectUser } from "./services/userService";
 
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import { Navbar } from "./components";
 import Inspect from "./components/Inspect";
 
 import styles from "./App.module.css";
-import Welcome from "./components/Welcome";
 import Duel from "./components/Duel";
+import Welcome from "./components/Welcome";
 
 function App() {
 	const [userProfile, setUserProfile] = useState({});
@@ -34,6 +34,11 @@ function App() {
 
 	const getVersusHandler = async usernamesArray => {
 		const p = await duelUsers(...usernamesArray);
+
+		// mutating it...don't care
+		joinTitles(p[0]);
+		joinTitles(p[1]);
+		
 		setDuelProfiles(p);
 
 		// do this instead of reading duelProfiles
@@ -71,7 +76,7 @@ function App() {
 			<Navbar />
 			<div className={styles.container}>
 				<Switch>
-					<Route exact path="/">
+					<Route exact path="/dev-duel">
 						<Welcome />
 					</Route>
 					<Route exact path="/inspect">
