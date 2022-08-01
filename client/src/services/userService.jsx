@@ -1,5 +1,5 @@
-const inspectUserUrl = "http://localhost:3000/api/user/";
-const duelUsersUrl = "http://localhost:3000/api/users?";
+const inspectUserUrl = "https://api0.chronicles-of-tim.xyz/api/user/";
+const duelUsersUrl = "https://api0.chronicles-of-tim.xyz/api/users?";
 
 export const inspectUser = async (username = "andrew") => {
   // await response of fetch call

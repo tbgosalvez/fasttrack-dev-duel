@@ -51,7 +51,7 @@ const Duel = props => {
 							winner={profileAttributes[0][0][1] === props.victor} />
 					</div>
 					<div className={styles.img_vs}>
-						<img src="/street-fighter-vs.png" />
+						<img src="/dev-duel/street-fighter-vs.png" />
 					</div>
 					<div className={styles.card_vs}>
 						<Profile 
